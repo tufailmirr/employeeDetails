@@ -1,9 +1,10 @@
 
-import { BottomSheet, BottomSheetRef } from 'react-spring-bottom-sheet'
+// @ts-ignore
+import { BottomSheet } from 'react-spring-bottom-sheet'
 import "react-spring-bottom-sheet/dist/style.css";
 
 interface IBottomSheetProps {
-    open : Boolean;
+    open : boolean;
     onClick : (data : any) => void;
     onClose : () => void;
     roles : {

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+
 import './App.css'
 
 import EmployeeList from './Screens/EmployeeList/EmployeeList'
@@ -9,7 +9,6 @@ import { Route,  Routes } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 
 function App() {
-  const [db, setDb] = useState(null);
 
 
 initDB(DBConfig);

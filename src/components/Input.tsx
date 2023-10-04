@@ -1,4 +1,4 @@
-import React, { HTMLProps, LegacyRef, ReactNode, forwardRef } from "react";
+import  { HTMLProps, LegacyRef, ReactNode, forwardRef } from "react";
 
 interface InputProps extends HTMLProps<HTMLInputElement> {
   leftIcon?: ReactNode;

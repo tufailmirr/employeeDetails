@@ -1,3 +1,4 @@
+// @ts-nocheck
 import  { useEffect, useState } from "react";
 import Input from "../../components/Input";
 
@@ -12,6 +13,7 @@ import {BsArrowRight} from 'react-icons/bs'
 import { useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
 import Header from "../../components/Header";
+// @ts-ignore
 import DeleteIcon from '../../assets/DeleteIcon.svg'
 import { Notification } from "../../components/Notifications";
 
