@@ -1,15 +1,18 @@
-
+import { ReactNode } from "react";
+import { useParams } from "react-router-dom";
 
 interface IHeaderProps {
     title : string;
+    rightButton ?: ReactNode;
     classes ?: string
 }
 
-const Header = ({title, classes} : IHeaderProps) => {
+const Header = ({title, rightButton, classes} : IHeaderProps) => {
 
   return (
-    <div className={`bg-[#1DA1F2] text-[#FFFFFF] p-4 ${classes}`}>
-        {title}
+    <div className={`flex justify-between items-center p-4 ${classes}`}>
+        <div> {title}</div>
+        {rightButton}
     </div>
   )
 }

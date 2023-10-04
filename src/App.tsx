@@ -1,19 +1,47 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 
 import EmployeeList from './Screens/EmployeeList/EmployeeList'
-import AddEmployee from './Screens/AddEmployee/AddEmployee'
+import AddEmployee from './Screens/AddEmployee/AddEmployee';
+import { IndexedDB, initDB } from "react-indexed-db-hook";
+import { DBConfig } from './utils/DbConfig';
+import { Route,  Routes } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [db, setDb] = useState(null);
+
+
+initDB(DBConfig);
+
 
   return (
-    <main className='bg-[#FFFFFF]'>
-  {/* <Input 
-  leftIcon={<MdOutlinePerson color="#1D9FEE" size={24} />}
-  /> */}
-      {/* <EmployeeList/> */}
-      <AddEmployee/>
+    <IndexedDB
+    name="MyDB"
+    version={1}
+    objectStoresMeta={[
+      {
+        store: "employees",
+        storeConfig: { keyPath: "id", autoIncrement: true },
+        storeSchema: [
+          { name: "name", keypath: "name", options: { unique: false } },
+          { name: "role", keypath: "role", options: { unique: false } },
+          { name: "fromDate", keypath: "fromDate", options: { unique: false } },
+          { name: "email", keypath: "email", options: { unique: false } },]
+      },
+    ]}
+  >
+    <main className='bg-[#FFFFFF] h-screen'>
+    <Toaster position='bottom-center' />
+    <Routes>
+     
+        <Route   path="/" element={<EmployeeList/> } />
+        <Route path="/addEmployee" element={<AddEmployee/>} />
+        <Route path="/updateEmployee/:id" element={<AddEmployee/>} />
+   
+    </Routes>
     </main>
+    </IndexedDB>
   )
 }
 

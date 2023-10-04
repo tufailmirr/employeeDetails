@@ -10,11 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "idb": "^7.1.1",
+    "moment": "^2.29.4",
     "postcss-custom-properties-fallback": "^1.0.2",
     "react": "^18.2.0",
+    "react-datepicker": "^4.18.0",
     "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1",
     "react-icons": "^4.11.0",
+    "react-indexed-db-hook": "^1.0.14",
+    "react-router-dom": "^6.16.0",
     "react-spring-bottom-sheet": "^3.4.1",
+    "react-swipe-to-delete-component": "^1.0.8",
     "react-swipeable": "^7.0.1"
   },
   "devDependencies": {
